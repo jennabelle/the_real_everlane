@@ -1,3 +1,5 @@
+const webpack = require('webpack')
+
 module.exports = {
   entry: [
     './src/index.js'
@@ -30,5 +32,10 @@ module.exports = {
   devServer: {
     historyApiFallback: true,
     contentBase: './'
-  }
+  },
+  plugins: process.env.NODE_ENV === 'production' ? [
+    new webpack.optimize.DedupePlugin(),
+    new webpack.optimize.OccurrenceOrderPlugin(),
+    new webpack.optimize.UglifyJsPlugin()
+  ] : [],
 };
