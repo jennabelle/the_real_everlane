@@ -1,0 +1,7 @@
+.app_background {
+  background-image: url("../src/images/everlane.jpg");
+  width: 100%;
+  height: 900px;
+  background-position: center; /* css trick to get full background image */
+  background-size: cover; /* image will be centered no matter how wide the screen is */
+}
