@@ -31,7 +31,7 @@ Go to:
     Bootstrap
     Mocha
     Chai
-    Twitter
+    Twitter API
     (planned) - SASS
     (planned) - Redux
     (planned) - Pagination
