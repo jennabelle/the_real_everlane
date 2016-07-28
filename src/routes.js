@@ -14,8 +14,5 @@ export default (
 path      								component
 /         								App
 /ShowDeviceInfo   						ShowDeviceInfo
-/ShowDeviceInfo/:deviceId				ShowDeviceInfo
-/ShowDeviceInfo/:deviceId/:functionName	CallFunction
-/ShowVarInfo/:deviceId/:varName			ShowVarInfo
 
 */
