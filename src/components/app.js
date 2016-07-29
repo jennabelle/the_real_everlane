@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
-import getMuiTheme from 'material-ui/styles/getMuiTheme';
-import lightBaseTheme from 'material-ui/styles/baseThemes/lightBaseTheme';
 import AutoComplete from 'material-ui/AutoComplete'
+import injectTapEventPlugin from 'react-tap-event-plugin';
+
+injectTapEventPlugin();
 // import SearchBar from './searchBar'
 
 const terms = [
@@ -17,16 +18,33 @@ const terms = [
 ]
 
 export default class App extends Component {
-  render() {
-    return ( 
+
+	constructor(props) {
+		super(props)
+
+		this.state = { dataSource: [] }
+
+		this.handleUpdateInput = this.handleUpdateInput.bind(this)
+	}
+ 	handleUpdateInput(value) {
+
+		console.log('value: ', value)
+
+		this.setState({
+			dataSource: [ value ]
+		});
+	};
+	render() {
+		return ( 
       	<div className='app_background'>
-      		<MuiThemeProvider muiTheme={ getMuiTheme(lightBaseTheme) } >
+      		<MuiThemeProvider>
       			<AutoComplete
-      				className='searchBar'
-      				fullWidth={ true }
-			      	floatingLabelText="Search for products worn by real people..."
-			      	filter={ AutoComplete.caseInsensitiveFilter }
-			      	dataSource={ terms } />
+			          hintText="Type anything"
+			          dataSource={this.state.dataSource}
+			          onUpdateInput={this.handleUpdateInput}
+			          floatingLabelText="Search for products worn by real people" 
+			          fullWidth={ true }
+			          />
       		</MuiThemeProvider>
       	</div>
     );
