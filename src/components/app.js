@@ -6,14 +6,14 @@ import lightBaseTheme from 'material-ui/styles/baseThemes/lightBaseTheme';
 import AutoComplete from 'material-ui/AutoComplete'
 // import SearchBar from './searchBar'
 
-const colors = [
-  'Dress',
-  'Shoes',
-  'Outerwear',
-  'Bags',
-  'Pants',
-  'Blouse',
-  'T-Shirt'
+const terms = [
+	'Bags',
+	'Blouse',
+  	'Dress',
+  	'Outerwear',
+  	'Pants',
+  	'Shoes',
+  	'T-Shirt'
 ]
 
 export default class App extends Component {
@@ -26,7 +26,7 @@ export default class App extends Component {
       				fullWidth={ true }
 			      	floatingLabelText="Search for products worn by real people..."
 			      	filter={ AutoComplete.caseInsensitiveFilter }
-			      	dataSource={ colors } />
+			      	dataSource={ terms } />
       		</MuiThemeProvider>
       	</div>
     );
