@@ -40,21 +40,21 @@ const fruit = [
   'Watermelon',
 ];
 
-const SearchBar = () => (
-  <div>
-    <AutoComplete
-      floatingLabelText="Type 'r', case insensitive"
-      filter={AutoComplete.caseInsensitiveFilter}
-      dataSource={colors}
-    />
-    <br />
-    <AutoComplete
-      floatingLabelText="Type 'peah', fuzzy search"
-      filter={AutoComplete.fuzzyFilter}
-      dataSource={fruit}
-      maxSearchResults={5}
-    />
-  </div>
-);
+// const SearchBar = () => (
+//   <div>
+//     <AutoComplete
+//       floatingLabelText="Type 'r', case insensitive"
+//       filter={AutoComplete.caseInsensitiveFilter}
+//       dataSource={colors}
+//     />
+//     <br />
+//     <AutoComplete
+//       floatingLabelText="Type 'peah', fuzzy search"
+//       filter={AutoComplete.fuzzyFilter}
+//       dataSource={fruit}
+//       maxSearchResults={5}
+//     />
+//   </div>
+// );
 
-export default SearchBar;
+// export default SearchBar;
