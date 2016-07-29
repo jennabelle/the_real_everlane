@@ -3,6 +3,7 @@ import { Link } from 'react-router'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import AutoComplete from 'material-ui/AutoComplete'
 import injectTapEventPlugin from 'react-tap-event-plugin'
+import NetworkHelperClass from '../helpers/networkHelper'
 
 injectTapEventPlugin();
 
