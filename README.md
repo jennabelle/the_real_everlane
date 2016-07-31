@@ -5,15 +5,13 @@ A Twitter api search for everlane products worn by real people
 
 	npm install
 
-    bower install
-
 ###To Start Dev Server###
 
     npm start
 
 Go to:
 
-    http://localhost:8080
+    http://localhost:3000
 
 ###Notes on Process###
 
@@ -28,12 +26,11 @@ Go to:
     Webpack
     Webpack-dev-server
     Axios
-    Bootstrap
     Mocha
     Chai
-    Twitter API
-    (planned) - SASS
+    Twitter Public API
+    DotEnv
+    Material-UI
     (planned) - Redux
     (planned) - Pagination
-    (planned) - User Authentication (need MongoDB, Mongoose.js, Express.js)
     (planned) - Deploy on Heroku
