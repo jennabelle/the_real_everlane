@@ -46,30 +46,30 @@ export default class App extends Component {
 		return (
       	<div className='app_background'>
       		<MuiThemeProvider>
-      			<div>
+ 					<div>
+ 						<div className='searchBar'>
 	      			<AutoComplete
-	      				className='searchBar'
+	      				fullWidth={ true }
 				         hintText='Type anything'
 				         dataSource={ this.state.dataSource }
 				         onUpdateInput={ this.handleUpdateInput }
 				         onKeyDown={ this.onKeyDown }
 				         floatingLabelText='Search for products worn by real people'
-				         fullWidth={ true }
 				         />
-
-				      <div className='view_tweets'>
-				         { this.state.tweets.map(function(name, index) {
-
-								return (
-									<div key={ index }>
-										<Tweet data={ name } />
-									</div>
-								)}
-							)}
 				      </div>
-			      </div>
+				   	<div className='view_tweets'>
+				      { this.state.tweets.map(function(name, index) {
+
+							return (
+								<div key={ index }>
+									<Tweet data={ name } />
+								</div>
+							)}
+						)}
+				   	</div>
+				   </div>
       		</MuiThemeProvider>
       	</div>
-    );
-  }
+   	);
+   }
 }
