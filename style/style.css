@@ -6,15 +6,18 @@
   	background-size: cover; /* image will be centered no matter how wide the screen is */
 }
 
-.searchBar {
+.searchBar_wrapper {
+	margin-left: 400px;
+	margin-right: 400px;
+	margin-bottom: 150px;
+}
 
-	margin-left: 150px;
-	margin-right: 150px;
-	margin-bottom: 100px;
+.searchBar {
+	margin-top: 200px;
 }
 
 .view_tweets {
-	margin-top: 180px;
+	margin-top: 220px;
 	margin-left: 400px;
 	margin-right: 400px;
 	margin-bottom: 100px;

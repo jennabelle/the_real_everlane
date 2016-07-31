@@ -47,8 +47,9 @@ export default class App extends Component {
       	<div className='app_background'>
       		<MuiThemeProvider>
  					<div>
- 						<div className='searchBar'>
+ 						<div className='searchBar_wrapper'>
 	      			<AutoComplete
+	      				className='searchBar'
 	      				fullWidth={ true }
 				         hintText='Type anything'
 				         dataSource={ this.state.dataSource }
