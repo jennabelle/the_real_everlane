@@ -13,14 +13,14 @@ DotEnv.config();
 // import path from 'path'
 // import Twitter from 'twitter'
 
+const api_twitter_url = 'https://api.twitter.com/1.1/search/tweets.json';
+
 var client = new Twitter({
   consumer_key: process.env.CONSUMER_KEY,
   consumer_secret: process.env.CONSUMER_SECRET,
   access_token_key: process.env.ACCESS_TOKEN_KEY,
   access_token_secret: process.env.ACCESS_TOKEN_SECRET
 });
-
-const api_url = 'https://api.twitter.com/1.1/search/tweets.json';
 
 // configure express to use body-parser as middleware
 app.use(bodyParser.urlencoded({ extended: false, limit: '500mb' }));
@@ -33,7 +33,7 @@ app.post('/api/getTweets', function(req, res) {
 
 	var params = { q: req.body.searchQuery + '+everlane', filter: 'media' };
 
-	client.get(api_url, params, function(error, tweets, resp) {
+	client.get(api_twitter_url, params, function(error, tweets, resp) {
 
 		if (error) { console.log('error: ', error) }
 
