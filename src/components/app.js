@@ -51,7 +51,7 @@ export default class App extends Component {
 	      			<AutoComplete
 	      				className='searchBar'
 	      				fullWidth={ true }
-				         hintText='Type anything'
+				         hintText='Type a product and press enter'
 				         dataSource={ this.state.dataSource }
 				         onUpdateInput={ this.handleUpdateInput }
 				         onKeyDown={ this.onKeyDown }
