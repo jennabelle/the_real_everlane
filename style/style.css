@@ -7,8 +7,15 @@
 }
 
 .searchBar {
-	margin-top: 200px;
-	margin-left: 300px;
-	margin-right: 300px;
+	margin-top: 250px;
+	margin-left: 750px;
+	margin-right: 750px;
+	margin-bottom: 100px;
+}
+
+.view_tweets {
+	margin-top: 180px;
+	margin-left: 400px;
+	margin-right: 400px;
 	margin-bottom: 100px;
 }
