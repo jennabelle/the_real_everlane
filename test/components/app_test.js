@@ -24,4 +24,8 @@ describe('App' , () => {
   it('shows a search bar class', () => {
   	expect(component.find('.searchBar')).to.exist
   })
+
+  it('shows view tweets class', () => {
+  	expect(component.find('.view_tweets')).to.exist
+  })
 })
