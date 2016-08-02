@@ -1,9 +1,12 @@
-import { renderComponent , expect } from '../test_helper'
 import React from 'react'
+import { renderComponent , expect } from '../test_helper'
+import { shallow } from 'enzyme'
 import App from '../../src/components/app'
+import getMuiTheme from '../../node_modules/material-ui/styles/getMuiTheme'
 
 describe('App' , () => {
   let component
+  const muiTheme = getMuiTheme()
 
   beforeEach(() => {
     component = renderComponent( React.createElement(App) )
