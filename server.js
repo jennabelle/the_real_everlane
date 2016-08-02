@@ -8,11 +8,6 @@ var DotEnv = require('dotenv');
 
 DotEnv.config();
 
-// import express from 'express'
-// import bodyParser from 'body-parser'
-// import path from 'path'
-// import Twitter from 'twitter'
-
 const api_twitter_url = 'https://api.twitter.com/1.1/search/tweets.json';
 
 var client = new Twitter({
@@ -38,6 +33,7 @@ app.post('/api/getTweets', function(req, res) {
 		if (error) { console.log('error: ', error) }
 
 		if (!error) {
+			console.log('tweets: ', tweets.statuses)
 			res.send(tweets);
 		}
 	});

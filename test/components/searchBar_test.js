@@ -59,7 +59,4 @@ describe('SearchBar' , () => {
   //   shows a tweet in specific styled way
   // });
 
-  // it('given a list of tweets, it shows all the tweets', () => {
-
-  // });
 })
