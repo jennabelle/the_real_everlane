@@ -1,5 +1,5 @@
 import { renderComponent , expect } from '../test_helper';
-import React, { Component } from 'react'
+import React from 'react'
 import App from '../../src/components/app';
 
 describe('App' , () => {
@@ -17,21 +17,21 @@ describe('App' , () => {
   	expect(component).to.have.class('app_background');
   });
 
-  it('has a input text area', () => {
-  	// expect(component.find('textarea')).to.exist;
-  })
+  // it('has a input text area', () => {
+  // 	// expect(component.find('textarea')).to.exist;
+  // })
 
-  it('shows the correct text', () => {
-  	// expect(component).to.contain('React simple starter');
-  });
+  // it('shows the correct text', () => {
+  // 	// expect(component).to.contain('React simple starter');
+  // });
 
-  it('pressing enter displays tweets', () => {
-  	// simulate enter
-  	// shows a tweet in specific styled way
-  });
+  // it('pressing enter displays tweets', () => {
+  // 	// simulate enter
+  // 	// shows a tweet in specific styled way
+  // });
 
-  it('given a list of tweets, it shows all the tweets', () => {
+  // it('given a list of tweets, it shows all the tweets', () => {
 
-  });
+  // });
 
 });

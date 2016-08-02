@@ -6,11 +6,8 @@ import jsdom from 'jsdom';
 import chai, { expect } from 'chai';
 import chaiJquery from 'chai-jquery';
 import App from '../src/components/app';
-// import { Provider } from 'react-redux';
-// import { createStore } from 'redux';
-// import reducers from '../src/reducers';
 
-// set up testing environment to run like a browser in the command line
+// set up test environment to run like browser in command line
 global.document = jsdom.jsdom('<!doctype html><html><body></body></html>');
 global.window = global.document.defaultView;
 global.navigator = global.window.navigator;
@@ -35,4 +32,4 @@ $.fn.simulate = function(eventName, value) {
 };
 
 // export functions
-export {renderComponent, expect};
+export { renderComponent, expect };
