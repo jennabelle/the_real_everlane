@@ -5,7 +5,6 @@ import TestUtils from 'react-addons-test-utils'
 import jsdom from 'jsdom'
 import chai, { expect } from 'chai'
 import chaiJquery from 'chai-jquery'
-import App from '../src/components/app'
 
 // set up test environment to run like browser in command line
 global.document = jsdom.jsdom('<!doctype html><html><body></body></html>')

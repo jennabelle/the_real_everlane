@@ -40,19 +40,19 @@ export default class SearchBar extends Component {
  			<div className='searchBar_wrapper'>
  				<MuiThemeProvider>
  					<div>
-			      		<AutoComplete
-			      		 className='searchBar'
-			      		 fullWidth={ true }
-						    hintText='Type a product and press enter'
-						    dataSource={ this.state.dataSource }
-						    onUpdateInput={ this.handleUpdateInput }
-						    onKeyDown={ this.onKeyDown }
-						    floatingLabelText='Search for products worn by real people'
-						    />
+			      	<AutoComplete
+			      	 className='searchBar'
+			      	 fullWidth={ true }
+						 hintText='Type a product and press enter'
+						 dataSource={ this.state.dataSource }
+						 onUpdateInput={ this.handleUpdateInput }
+						 onKeyDown={ this.onKeyDown }
+						 floatingLabelText='Search for products worn by real people'
+						 />
 						<SearchResults tweets={ this.state.tweets } />
 					</div>
 				</MuiThemeProvider>
 			</div>
-   		);
+   	);
    }
 }

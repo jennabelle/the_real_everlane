@@ -17,17 +17,33 @@ describe('SearchBar' , () => {
   	expect(component).to.have.class('searchBar_wrapper')
   })
 
+  describe('entering some text', () => {
+    // beforeEach(() => {
+    //   console.log('component: ', component)
+    //   component.find('AutoComplete').simulate('change', 'new comment')
+    // })
+
+    // it('shows text in the input field', () => {
+    //   expect(component.find('AutoComplete')).to.have.value('new commen')
+    // })
+
+    it('when submitted, clears the input', () => {
+      component.find('AutoComplete').simulate.keyDown({ keyCode: 13 })
+      expect(copmonent.find('AutoComplete')).to.have.value('')
+    })
+  })
+
   // it('has a input text area', () => {
-  //  // expect(component.find('textarea')).to.exist;
+  //   expect(component.find('textarea')).to.exist;
   // })
 
   // it('shows the correct text', () => {
-  //  // expect(component).to.contain('React simple starter');
+  //   expect(component).to.contain('Search for products worn by real people');
   // });
 
   // it('pressing enter displays tweets', () => {
-  //  // simulate enter
-  //  // shows a tweet in specific styled way
+  //   simulate enter
+  //   shows a tweet in specific styled way
   // });
 
   // it('given a list of tweets, it shows all the tweets', () => {

@@ -34,6 +34,7 @@ Please note: As of Aug 2, 2016, there is an error occuring within Material-UI bu
     Axios
     Mocha
     Chai
+    Enzyme
     Twitter Public API
     DotEnv
     Material-UI
