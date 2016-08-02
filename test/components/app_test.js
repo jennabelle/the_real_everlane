@@ -13,7 +13,7 @@ describe('App' , () => {
     expect(component).to.exist;
   });
 
-  it('has has the correct class', () => {
+  it('has the correct class', () => {
   	expect(component).to.have.class('app_background');
   });
 
