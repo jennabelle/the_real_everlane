@@ -16,7 +16,7 @@ const $ = _$(window)
 chaiJquery(chai, chai.util, $)
 
 // build 'renderComponent' helper that should render a given react class
-function renderComponent(ComponentClass) {
+function renderComponent(ComponentClass, props = {}, state = {}) {
   const componentInstance =  TestUtils.renderIntoDocument(ComponentClass)
 
   return $(ReactDOM.findDOMNode(componentInstance))
