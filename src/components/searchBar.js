@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
-// import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import AutoComplete from 'material-ui/AutoComplete'
-import Tweet from 'react-tweet'
+import SearchResults from './searchResults'
 
 export default class SearchBar extends Component {
 
@@ -50,17 +49,7 @@ export default class SearchBar extends Component {
 				    onKeyDown={ this.onKeyDown }
 				    floatingLabelText='Search for products worn by real people'
 				    />
-
-				<div className='view_tweets'>
-				    { this.state.tweets.map(function(name, index) {
-
-						return (
-							<div key={ index }>
-								<Tweet data={ name } />
-							</div>
-						)}
-					)}
-				</div>
+				<SearchResults tweets={ this.state.tweets } />
 			</div>
    		);
    }
