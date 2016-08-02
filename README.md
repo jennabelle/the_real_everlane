@@ -17,7 +17,7 @@ Go to:
 
 ###To Run Unit Tests###
 
-    npm test:watch
+    npm test
 
 ###Notes on Process###
 
