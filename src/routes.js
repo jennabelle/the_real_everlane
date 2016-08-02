@@ -13,6 +13,5 @@ export default (
 
 path      								component
 /         								App
-/ShowDeviceInfo   						ShowDeviceInfo
 
 */
