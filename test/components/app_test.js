@@ -16,4 +16,8 @@ describe('App' , () => {
   it('has the correct class', () => {
   	expect(component).to.have.class('app_background')
   })
+
+  it('shows a search bar', () => {
+  	expect(component.find('.searchBar_wrapper')).to.exist
+  })
 })
