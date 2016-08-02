@@ -16,8 +16,7 @@ export default class SearchBar extends Component {
  	handleUpdateInput(value) { // save user input
 
 		this.setState({
-			dataSource: [ value ],
-			tweets: []
+			dataSource: [ value ]
 		})
 	}
 	onKeyDown(value) {
@@ -28,9 +27,7 @@ export default class SearchBar extends Component {
 
 	  		axios.post('/api/getTweets', { searchQuery: this.state.dataSource.join() })
 	  		.then( (resp) => {
-	  			console.log('axios post response: ', resp.data.statuses)
-
-	  			this.setState({ tweets: resp.data.statuses });
+	  			this.setState({ tweets: resp.data.statuses })
 	  		})
 	  		.catch( (resp) => {
 	  			console.log('axios catch response: ', resp)

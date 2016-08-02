@@ -1,21 +1,21 @@
-import { renderComponent , expect } from '../test_helper';
+import { renderComponent , expect } from '../test_helper'
 import React from 'react'
-import App from '../../src/components/app';
+import App from '../../src/components/app'
 
 describe('App' , () => {
-  let component;
+  let component
 
   beforeEach(() => {
-    component = renderComponent( React.createElement(App) );
-  });
+    component = renderComponent( React.createElement(App) )
+  })
 
   it('renders something', () => {
-    expect(component).to.exist;
-  });
+    expect(component).to.exist
+  })
 
   it('has the correct class', () => {
-  	expect(component).to.have.class('app_background');
-  });
+  	expect(component).to.have.class('app_background')
+  })
 
   // it('has a input text area', () => {
   // 	// expect(component.find('textarea')).to.exist;
@@ -34,4 +34,4 @@ describe('App' , () => {
 
   // });
 
-});
+})
