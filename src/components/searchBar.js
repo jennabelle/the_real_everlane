@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import axios from 'axios'
 import AutoComplete from 'material-ui/AutoComplete'
 import SearchResults from './searchResults'
@@ -37,16 +38,20 @@ export default class SearchBar extends Component {
 	render() {
 		return (
  			<div className='searchBar_wrapper'>
-	      		<AutoComplete
-	      			className='searchBar'
-	      			fullWidth={ true }
-				    hintText='Type a product and press enter'
-				    dataSource={ this.state.dataSource }
-				    onUpdateInput={ this.handleUpdateInput }
-				    onKeyDown={ this.onKeyDown }
-				    floatingLabelText='Search for products worn by real people'
-				    />
-				<SearchResults tweets={ this.state.tweets } />
+ 				<MuiThemeProvider>
+ 					<div>
+			      		<AutoComplete
+			      			className='searchBar'
+			      			fullWidth={ true }
+						    hintText='Type a product and press enter'
+						    dataSource={ this.state.dataSource }
+						    onUpdateInput={ this.handleUpdateInput }
+						    onKeyDown={ this.onKeyDown }
+						    floatingLabelText='Search for products worn by real people'
+						    />
+						<SearchResults tweets={ this.state.tweets } />
+					</div>
+				</MuiThemeProvider>
 			</div>
    		);
    }

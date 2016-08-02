@@ -1,6 +1,6 @@
 import { renderComponent , expect } from '../test_helper'
 import React from 'react'
-import SearchBar from '../../src/components/app'
+import SearchBar from '../../src/components/searchBar'
 
 describe('SearchBar' , () => {
   let component
@@ -14,7 +14,6 @@ describe('SearchBar' , () => {
   })
 
   it('has the correct class', () => {
-    console.log('searchBar class: ', component)
   	expect(component).to.have.class('searchBar_wrapper')
   })
 })
