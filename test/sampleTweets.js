@@ -1,4 +1,4 @@
-export default [ { created_at: 'Tue Aug 02 00:16:01 +0000 2016',
+export default sampleTweets = [ { created_at: 'Tue Aug 02 00:16:01 +0000 2016',
     id: 760267877555507200,
     id_str: '760267877555507200',
     text: 'RT @kimakimberlin: Shop ethically with @Everlane, featuring the Cotton Poplin Shirt Dress – https://t.co/wOc276UruB https://t.co/7wHNJDXTBb',
