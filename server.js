@@ -1,6 +1,5 @@
 var express = require('express');
 var bodyParser = require('body-parser');
-var path = require('path');
 var Twitter = require('twitter');
 var app = express();
 var PORT = process.env.PORT || 3000;
@@ -33,7 +32,6 @@ app.post('/api/getTweets', function(req, res) {
 		if (error) { console.log('error: ', error) }
 
 		if (!error) {
-			console.log('tweets: ', tweets.statuses)
 			res.send(tweets);
 		}
 	});

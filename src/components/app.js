@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import axios from 'axios'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import SearchBar from './searchBar'
 import injectTapEventPlugin from 'react-tap-event-plugin'
