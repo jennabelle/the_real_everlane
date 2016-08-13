@@ -39,9 +39,9 @@ export default class SearchBar extends Component {
  			<div className='searchBar_wrapper'>
  				<MuiThemeProvider>
  					<div>
-			      	<AutoComplete
-			      	 className='searchBar'
-			      	 fullWidth={ true }
+				      	<AutoComplete
+				      	 className='searchBar'
+				      	 fullWidth={ true }
 						 hintText='Type a product and press enter'
 						 dataSource={ this.state.dataSource }
 						 onUpdateInput={ this.handleUpdateInput }
