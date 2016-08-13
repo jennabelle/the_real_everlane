@@ -24,8 +24,6 @@ export default class SearchBar extends Component {
 
 		if ( value.keyCode === 13 ) { // if user clicks 'enter'
 
-	  		console.log('this.state.dataSource: ', this.state.dataSource)
-
 	  		axios.post('/api/getTweets', { searchQuery: this.state.dataSource.join() })
 	  		.then( (resp) => {
 	  			this.setState({ tweets: resp.data.statuses })
