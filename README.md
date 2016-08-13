@@ -1,6 +1,7 @@
 # The Real Everlane
 A Twitter-integrated search for Everlane products worn by real people
 
+###Screenshots###
 
 <span width="30px" height="30px"><img src="./src/images/Screenshot1.png"></span>
 <span width="30px" height="30px"><img src="./src/images/Screenshot2.png"></span>
