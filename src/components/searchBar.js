@@ -18,6 +18,7 @@ export default class SearchBar extends Component {
 	constructor(props) {
 		super(props)
 
+		// keep track of when user has entered search input the first time
 		this.state = { dataSource: [], tweets: [], afterSearchFlag: false, isFetching: false }
 
 		this.handleUpdateInput = this.handleUpdateInput.bind(this)
@@ -35,8 +36,7 @@ export default class SearchBar extends Component {
 
 	  	axios.post('/api/getTweets', { searchQuery: this.state.dataSource.join() })
 	  	.then( (resp) => {
-	  		this.setState({ afterSearchFlag: true, tweets: resp.data.statuses, isFetching: false }) // keep track of when user has entered search input the first time
-	  		// this.setState({ tweets: resp.data.statuses })
+	  		this.setState({ afterSearchFlag: true, tweets: resp.data.statuses, isFetching: false }) 
 	  	})
 	  	.catch( (resp) => {
 	  		console.log('axios catch response: ', resp)
