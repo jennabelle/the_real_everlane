@@ -6,13 +6,21 @@ import SearchResults from './searchResults'
 
 export default class SearchBar extends Component {
 
+	static propTypes = {
+	    searchTerms: React.PropTypes.array
+	};
+
+	static defaultProps = {
+	    searchTerms: [ 'dress', 'shoes', 'backpack', 'handbag' ]
+	}
+
 	constructor(props) {
 		super(props)
 
 		this.state = { dataSource: [], tweets: [], afterSearchFlag: false }
 
 		this.handleUpdateInput = this.handleUpdateInput.bind(this)
-		this.onKeyDown = this.onKeyDown.bind(this)
+		this.searchTweets = this.searchTweets.bind(this)
 	}
  	handleUpdateInput(value) { // save user input
 
@@ -20,19 +28,16 @@ export default class SearchBar extends Component {
 			dataSource: [ value ]
 		})
 	}
-	onKeyDown(value) {
-
-		if ( value.keyCode === 13 ) { // if user clicks 'enter'
+	searchTweets(value) {
 
 	  		axios.post('/api/getTweets', { searchQuery: this.state.dataSource.join() })
 	  		.then( (resp) => {
-	  			this.setState({ afterSearchFlag: true })
+	  			this.setState({ afterSearchFlag: true }) // keep track of when user has entered search input the first time
 	  			this.setState({ tweets: resp.data.statuses })
 	  		})
 	  		.catch( (resp) => {
 	  			console.log('axios catch response: ', resp)
 	  		})
-		}
 	}
 	render() {
 
@@ -43,11 +48,13 @@ export default class SearchBar extends Component {
 				      	<AutoComplete
 				      	 className='searchBar'
 				      	 fullWidth={ true }
+				      	 filter={ AutoComplete.fuzzyFilter }
 						 hintText='Type a product and press enter'
-						 dataSource={ this.state.dataSource }
+						 dataSource={ this.props.searchTerms }
 						 onUpdateInput={ this.handleUpdateInput }
-						 onKeyDown={ this.onKeyDown }
+						 onNewRequest={ this.searchTweets }
 						 floatingLabelText='Search for products worn by real people'
+						 maxSearchResults={5}
 						 />
 						<SearchResults tweets={ this.state.tweets } afterSearchFlag={ this.state.afterSearchFlag } />
 					</div>
