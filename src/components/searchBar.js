@@ -30,14 +30,14 @@ export default class SearchBar extends Component {
 	}
 	searchTweets(value) {
 
-	  		axios.post('/api/getTweets', { searchQuery: this.state.dataSource.join() })
-	  		.then( (resp) => {
-	  			this.setState({ afterSearchFlag: true }) // keep track of when user has entered search input the first time
-	  			this.setState({ tweets: resp.data.statuses })
-	  		})
-	  		.catch( (resp) => {
-	  			console.log('axios catch response: ', resp)
-	  		})
+	  	axios.post('/api/getTweets', { searchQuery: this.state.dataSource.join() })
+	  	.then( (resp) => {
+	  		this.setState({ afterSearchFlag: true }) // keep track of when user has entered search input the first time
+	  		this.setState({ tweets: resp.data.statuses })
+	  	})
+	  	.catch( (resp) => {
+	  		console.log('axios catch response: ', resp)
+	  	})
 	}
 	render() {
 
