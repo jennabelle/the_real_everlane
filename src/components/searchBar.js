@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import axios from 'axios'
 import AutoComplete from 'material-ui/AutoComplete'
+import CircularProgress from 'material-ui/CircularProgress'
 import SearchResults from './searchResults'
 
 export default class SearchBar extends Component {
@@ -17,7 +18,7 @@ export default class SearchBar extends Component {
 	constructor(props) {
 		super(props)
 
-		this.state = { dataSource: [], tweets: [], afterSearchFlag: false }
+		this.state = { dataSource: [], tweets: [], afterSearchFlag: false, isFetching: false }
 
 		this.handleUpdateInput = this.handleUpdateInput.bind(this)
 		this.searchTweets = this.searchTweets.bind(this)
@@ -30,10 +31,12 @@ export default class SearchBar extends Component {
 	}
 	searchTweets(value) {
 
+		this.setState({ isFetching: true })
+
 	  	axios.post('/api/getTweets', { searchQuery: this.state.dataSource.join() })
 	  	.then( (resp) => {
-	  		this.setState({ afterSearchFlag: true }) // keep track of when user has entered search input the first time
-	  		this.setState({ tweets: resp.data.statuses })
+	  		this.setState({ afterSearchFlag: true, tweets: resp.data.statuses, isFetching: false }) // keep track of when user has entered search input the first time
+	  		// this.setState({ tweets: resp.data.statuses })
 	  	})
 	  	.catch( (resp) => {
 	  		console.log('axios catch response: ', resp)
@@ -54,9 +57,11 @@ export default class SearchBar extends Component {
 						 onUpdateInput={ this.handleUpdateInput }
 						 onNewRequest={ this.searchTweets }
 						 floatingLabelText='Search for products worn by real people'
-						 maxSearchResults={5}
+						 maxSearchResults={ 5 }
 						 />
-						<SearchResults tweets={ this.state.tweets } afterSearchFlag={ this.state.afterSearchFlag } />
+						 { 
+						 	this.state.isFetching ? <CircularProgress /> : <SearchResults tweets={ this.state.tweets } afterSearchFlag={ this.state.afterSearchFlag } />
+						 }
 					</div>
 				</MuiThemeProvider>
 			</div>
