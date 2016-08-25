@@ -9,7 +9,7 @@ export default class SearchBar extends Component {
 	constructor(props) {
 		super(props)
 
-		this.state = { dataSource: [], tweets: [] }
+		this.state = { dataSource: [], tweets: [], afterSearchFlag: false }
 
 		this.handleUpdateInput = this.handleUpdateInput.bind(this)
 		this.onKeyDown = this.onKeyDown.bind(this)
@@ -26,6 +26,7 @@ export default class SearchBar extends Component {
 
 	  		axios.post('/api/getTweets', { searchQuery: this.state.dataSource.join() })
 	  		.then( (resp) => {
+	  			this.setState({ afterSearchFlag: true })
 	  			this.setState({ tweets: resp.data.statuses })
 	  		})
 	  		.catch( (resp) => {
@@ -48,7 +49,7 @@ export default class SearchBar extends Component {
 						 onKeyDown={ this.onKeyDown }
 						 floatingLabelText='Search for products worn by real people'
 						 />
-						<SearchResults tweets={ this.state.tweets } />
+						<SearchResults tweets={ this.state.tweets } afterSearchFlag={ this.state.afterSearchFlag } />
 					</div>
 				</MuiThemeProvider>
 			</div>

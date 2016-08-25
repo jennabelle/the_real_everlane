@@ -8,7 +8,6 @@ export default class SearchResults extends Component {
 	}
 	render() {
 
-		console.log('this.props.tweets.length: ', this.props.tweets.length)
 		return (
 			<div className='view_tweets'>
 				{ 
@@ -19,7 +18,7 @@ export default class SearchResults extends Component {
 								<div key={ index }>
 									<Tweet data={ name } />
 								</div>
-							)} ) : <p>There are no matches.</p>
+							)} ) : ( this.props.afterSearchFlag ? <p>There are no matches.</p> : null )
 				}
 			</div>
    		);
