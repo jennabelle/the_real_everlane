@@ -32,11 +32,11 @@ export default class SearchBar extends Component {
 	}
 	searchTweets(value) {
 
-		this.setState({ isFetching: true })
+		this.setState({ isFetching: true }) // show spinner
 
 	  	axios.post('/api/getTweets', { searchQuery: this.state.dataSource.join() })
 	  	.then( (resp) => {
-	  		this.setState({ afterSearchFlag: true, tweets: resp.data.statuses, isFetching: false }) 
+	  		this.setState({ afterSearchFlag: true, tweets: resp.data.statuses, isFetching: false }) // reset spinner
 	  	})
 	  	.catch( (resp) => {
 	  		console.log('axios catch response: ', resp)
@@ -65,6 +65,6 @@ export default class SearchBar extends Component {
 					</div>
 				</MuiThemeProvider>
 			</div>
-   	);
+   		);
    }
 }

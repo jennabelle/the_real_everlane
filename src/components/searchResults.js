@@ -17,7 +17,7 @@ export default class SearchResults extends Component {
 							<div key={ index }>
 								<Tweet data={ name } />
 							</div>
-						)} ) : ( this.props.afterSearchFlag ? <h3>There are no matches. Please try again.</h3> : null )
+						)} ) : ( this.props.afterSearchFlag ? <h4 className='noMatches'>There are no matches. Please try again.</h4> : null )
 				}
 			</div>
    		)
