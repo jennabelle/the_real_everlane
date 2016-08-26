@@ -4,8 +4,8 @@ A Twitter-integrated search for Everlane products worn by real people
 ###Screenshots###
 
 <span width="30px" height="30px"><img src="./src/images/Screenshot2.png"></span>
-<span width="30px" height="30px"><img src="./src/images/Screenshot3.png"></span>
 <span width="30px" height="30px"><img src="./src/images/Screenshot4.png"></span>
+<span width="30px" height="30px"><img src="./src/images/Screenshot3.png"></span>
 <span width="30px" height="30px"><img src="./src/images/Screenshot5.png"></span>
 
 
