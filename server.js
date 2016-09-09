@@ -23,6 +23,10 @@ app.use(bodyParser.json({ limit: '500mb' }));
 // serve static files like index.html, css etc
 app.use( express.static( __dirname ) );
 
+app.get('*', (req, res) => {
+	res.sendFile(path.resolve(__dirname), 'index.html');
+});
+
 app.post('/api/getTweets', function(req, res) {
 
 	var params = { q: req.body.searchQuery + '+everlane', filter: 'media' };
@@ -37,6 +41,6 @@ app.post('/api/getTweets', function(req, res) {
 	});
 });
 
-var server = app.listen(PORT, function() {
+app.listen(PORT, function() {
   console.log('\nProduction Express server running at localhost:' + PORT);
 });
