@@ -1,5 +1,3 @@
-const webpack = require('webpack')
-
 module.exports = {
   entry: [
     './src/index.js'
@@ -16,6 +14,11 @@ module.exports = {
       query: {
         presets: ['react', 'es2015', 'stage-1']
       }
+    },
+    {
+      test: /\.jsx?$/,
+      loaders: ['babel'],
+      exclude: /node_modules/
     },
     { 
       test: /\.css$/, 
