@@ -4,14 +4,14 @@ var Twitter = require('twitter');
 var path = require('path');
 var app = express();
 var PORT = process.env.PORT || 3000;
-// var DotEnv = require('dotenv');
+var DotEnv = require('dotenv');
 
-// DotEnv.config();
+DotEnv.config();
 
 const api_twitter_url = 'https://api.twitter.com/1.1/search/tweets.json';
 
 var client = new Twitter({
-  consumer_key: process.env.CONSUMER_KEY,
+  consumer_key: process.env.CONSUMER_KEY || process.env.NO,
   consumer_secret: process.env.CONSUMER_SECRET,
   access_token_key: process.env.ACCESS_TOKEN_KEY,
   access_token_secret: process.env.ACCESS_TOKEN_SECRET
