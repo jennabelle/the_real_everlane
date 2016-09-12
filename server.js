@@ -4,9 +4,9 @@ var Twitter = require('twitter');
 var path = require('path');
 var app = express();
 var PORT = process.env.PORT || 3000;
-var DotEnv = require('dotenv');
+// var DotEnv = require('dotenv');
 
-DotEnv.config();
+// DotEnv.config();
 
 const api_twitter_url = 'https://api.twitter.com/1.1/search/tweets.json';
 
