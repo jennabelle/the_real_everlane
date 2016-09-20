@@ -28,7 +28,8 @@ app.get('*', (req, res) => {
 	res.sendFile(path.resolve(__dirname), 'index.html');
 });
 
-app.post('/api/getTweets', function(req, res) {
+// jenna 9/20/16: when using webpack-dev-server, post request fails, get 404 error
+app.post('/api/getTweets', function(req, res) { console.log(
 
 	var params = { q: req.body.searchQuery + '+everlane', filter: 'media' };
 
